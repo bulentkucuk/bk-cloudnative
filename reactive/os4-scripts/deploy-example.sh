@@ -250,11 +250,11 @@ cd ~/cloud-native-starter/reactive/os4-scripts/
 echo "----------------------------------"
 echo "---       Infrastructure       ---"
 echo ""
-eval $KAFKA
+# eval $KAFKA
 echo ""
 checkKafka
 echo ""
-eval $POSTGRES
+# eval $POSTGRES
 echo ""
 checkPostgres
 echo "----------------------------------"

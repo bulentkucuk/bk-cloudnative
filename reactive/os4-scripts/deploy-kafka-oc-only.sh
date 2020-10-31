@@ -16,13 +16,13 @@ function setup() {
   if [ $? != 0 ]; then 
       oc new-project kafka
   fi
-    
-  curl -L https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.15.0/strimzi-cluster-operator-0.15.0.yaml \
-    | sed 's/namespace: .*/namespace: kafka/' \
-    | oc apply -f - -n kafka 
+  
+  #BK: not run this - Strimzi operator was installed for all namespaces
+  #curl -L https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.15.0/strimzi-cluster-operator-0.15.0.yaml \
+  #  | sed 's/namespace: .*/namespace: kafka/' \
+  #  | oc apply -f - -n kafka 
 
     oc apply -f ${root_folder}/scripts/kafka-cluster.yaml -n kafka 
-
     oc expose svc/my-cluster-kafka-external-bootstrap --port=9094
    
   _out Done installing Kafka

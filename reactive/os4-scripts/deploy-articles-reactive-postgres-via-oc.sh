@@ -20,7 +20,7 @@ function setup() {
   cd ${root_folder}/articles-reactive/src/main/resources
   sed -e "s/KAFKA_BOOTSTRAP_SERVERS/my-cluster-kafka-external-bootstrap.kafka:9094/g" \
       -e "s/IN_MEMORY_STORE/false/g" \
-      -e "s/POSTGRES_URL/database-articles.postgres:5432/g" \
+      -e "s/POSTGRES_URL/database-articles.postgres-cn-starter:5432/g" \
        application.properties.template > application.properties
 
   cd ${root_folder}/articles-reactive
