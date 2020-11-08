@@ -29,10 +29,10 @@ spec:
     spec:
       containers:
       - name: articles-reactive
-        image: articles-reactive:latest
+        image: image-registry.openshift-image-registry.svc:5000/cloud-native-starter/build-articles-reactive:latest
         ports:
         - containerPort: 8080
-        imagePullPolicy: Never
+#        imagePullPolicy: Never
         env:
         - name: samplescreation
           valueFrom:

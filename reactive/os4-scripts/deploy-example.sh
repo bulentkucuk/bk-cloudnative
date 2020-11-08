@@ -118,7 +118,7 @@ function checkKafka {
 }
 
 function checkPostgres {
-  oc project postgres
+  oc project postgres-cn-starter
   echo ""
   echo "---------------------------------"
   echo "Check: database-articles (postgres)"
@@ -229,6 +229,8 @@ function deployExampleApplication {
     eval $WEB_API
     echo "---          Web-APP           ---"
     eval $WEB_APP
+    echo "---          Articles-Publish  ---"
+    eval $ARTICLES_PUBLISH
     echo ""
 }
 
@@ -241,6 +243,7 @@ AUTHORS="./deploy-authors-via-oc.sh"
 ARTICLES="./deploy-articles-reactive-postgres-via-oc.sh"
 WEB_API="./deploy-web-api-reactive-via-oc.sh"
 WEB_APP="./deploy-web-app-reactive-via-oc.sh"
+ARTICLES_PUBLISH="./deploy-articles-publish.sh"
 
 # Provide the links to the microservices
 SHOW_URLS="./show-urls.sh"
@@ -254,20 +257,21 @@ echo ""
 echo ""
 checkKafka
 echo ""
+# BK use Console to set up DB
 # eval $POSTGRES
 echo ""
 checkPostgres
-echo "----------------------------------"
-echo "---    Deploy microservices    ---"
-echo ""
-deployExampleApplication
-echo ""
-checkMicroservices
-echo ""
-echo "----------------------------------"
-echo "--- Links to the microservices ---"
-echo ""
-eval $SHOW_URLS
-cd ~/cloud-native-starter/reactive
-echo ""
-echo "----------------------------------"
+# echo "----------------------------------"
+# echo "---    Deploy microservices    ---"
+# echo ""
+# deployExampleApplication
+# echo ""
+# checkMicroservices
+# echo ""
+# echo "----------------------------------"
+# echo "--- Links to the microservices ---"
+# echo ""
+# eval $SHOW_URLS
+# cd ~/cloud-native-starter/reactive
+# echo ""
+# echo "----------------------------------"
