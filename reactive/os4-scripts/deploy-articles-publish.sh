@@ -25,17 +25,11 @@ function setup() {
   oc start-build build-articles-publish --from-dir=.
   
   #BK: Serverless run
-  oc apply -f deployment/configmap.yaml
   kn service create articles-publish \
     --image image-registry.openshift-image-registry.svc:5000/cloud-native-starter/build-articles-publish:latest \
     --env-from cm:articles-config
    
   _out Done deploying articles-publish
-  # ROUTE=$(oc get route articles-publish --template='{{ .spec.host }}')
-  # _out Wait until the pod has been started: \"kubectl get pod --watch | grep articles-publish\"
-  # _out Wait a minute more then test:
-  # _out API Explorer: http://$ROUTE/explorer
-  # _out Sample API - Read articles: curl -X GET \"http://$ROUTE/v2/articles?amount=10\" -H \"accept: application/json\"
 }
 
 setup
