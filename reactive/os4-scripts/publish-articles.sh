@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SVC_URL="http://articles-publish-cloud-native-starter.openshift-serverless-cl-ecf58268eb10995f067698dffc82d2a7-0000.eu-gb.containers.appdomain.cloud/v2/articles"
-AUTHOR_PRE="Niklas Heidloff"
+AUTHOR="Niklas Heidloff"
 TITLE_PRE="Example Article"
 BLOG_URL="http://heidloff.net"
 
