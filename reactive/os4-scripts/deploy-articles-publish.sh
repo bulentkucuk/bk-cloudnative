@@ -21,7 +21,7 @@ function setup() {
        application.properties.template > application.properties
 
   cd ${root_folder}/articles-publish
-  oc new-build --name build-articles-publish --binary --strategy docker
+  oc new-build --name build-articles-publish --binary --dockerfile=Dockerfile.Native
   oc start-build build-articles-publish --from-dir=.
   
   #BK: Serverless run
